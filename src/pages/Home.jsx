@@ -37,7 +37,7 @@ const Home = () => {
                     
                     <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                      {
-                        books.map((book)=><BookCard key={books.bookId} book={book}></BookCard>)
+                        books.map((book)=><BookCard key={book.bookId} book={book}></BookCard>)
                      }
                     </div>
                     <div className="flex justify-center">
@@ -45,7 +45,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <h1>Home Page</h1>
+            
         </div>
     );
 };
