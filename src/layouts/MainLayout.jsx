@@ -4,11 +4,13 @@ import { Outlet } from 'react-router-dom';
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className=''>
             <div className='h-16'>
                 <Nav></Nav>
             </div>
-            <Outlet></Outlet>
+            <div className='min-h-[calc(100vh-64px)]'>
+                <Outlet></Outlet>
+            </div>
         </div>
     );
 };
