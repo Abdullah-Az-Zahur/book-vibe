@@ -1,18 +1,37 @@
-const getStoredJobApplication = () => {
-    const storedJobApplication = localStorage.getItem('job-application');
-    if (storedJobApplication) {
-        return JSON.parse(storedJobApplication);
+// const getStoredBooks = () => {
+//     const storedBooks = localStorage.getItem('book-readd');
+//     if (storedBooks) {
+//         return JSON.parse(storedBooks);
+//     }
+//     return [];
+// }
+
+// const saveBooks = (id) => {
+//     const storedBooks = getStoredBooks();
+//     const exists = storedBooks.find(bookId => bookId === id);
+//     if(!exists){
+//         storedBooks.push(id);
+//         localStorage.setItem('book-readd', JSON.stringify(storedBooks));
+//     }
+// }
+
+// export {getStoredBooks, saveBooks}
+
+const getStoredBooks = () => {
+    const storedBooks = localStorage.getItem('book-readd');
+    if (storedBooks) {
+        return JSON.parse(storedBooks);
     }
     return [];
 }
 
-const saveJobApplication = (id) => {
-    const storedJobApplications = getStoredJobApplication();
-    const exists = storedJobApplications.find(jobId => jobId === id);
+const saveBooks = (id)=>{
+    const storedBooks = getStoredBooks();
+    const exists = storedBooks.find(bookId => bookId === id);
     if(!exists){
-        storedJobApplications.push(id);
-        localStorage.setItem('job-application', JSON.stringify(storedJobApplications));
+        storedBooks.push(id);
+        localStorage.setItem('book-readd', JSON.stringify(storedBooks));
     }
 }
 
-export {getStoredJobApplication, saveJobApplication}
+export { getStoredBooks, saveBooks }

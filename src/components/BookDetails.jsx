@@ -1,13 +1,27 @@
 import React from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveBooks } from '../utility/localstorage';
 
 const BookDetails = () => {
     const books = useLoaderData();
     const { id } = useParams();
+    // const {author, image, bookName, review, totalPages, publisher, yearOfPublishing, category, rating, tags} = books
     // console.log(books, id)
     const idInt = parseInt(id);
     const book = books.find(book => book.bookId === idInt);
     console.log(book)
+
+    const handleReadd = (book) => {
+        saveBooks(id);
+        toast('Added to read mark');
+    }
+
+    const handleWishlist = (book)=>{
+        toast('add to wish list')
+    }
+
     return (
         <section className="dark:bg-gray-100 dark:text-gray-800 container mx-auto">
             <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between items-center">
@@ -35,11 +49,12 @@ const BookDetails = () => {
                         <p><span>Rating:</span>{book.rating}</p>
                     </div>
                     <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                        <button className="px-8 py-3 text-lg font-semibold border rounded dark:bg-violet-600 dark:text-gray-50 btn btn-info text-white">Read</button>
-                        <button className="px-8 py-3 text-lg font-semibold border rounded dark:bg-violet-600 dark:text-gray-50 btn btn-info text-white">Wish list</button>
+                        <button onClick={() => handleReadd(book)} className="px-8 py-3 text-lg font-semibold border rounded dark:bg-violet-600 dark:text-gray-50 btn btn-info text-white">Read</button>
+                        <button onClick={() => handleWishlist(book)} className="px-8 py-3 text-lg font-semibold border rounded dark:bg-violet-600 dark:text-gray-50 btn btn-info text-white">Wish list</button>
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </section>
     );
 };
