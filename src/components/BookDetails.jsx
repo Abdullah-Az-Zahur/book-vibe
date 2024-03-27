@@ -13,14 +13,14 @@ const BookDetails = () => {
     const book = books.find(book => book.bookId === idInt);
     console.log(book)
 
-    const handleReadd = (id) => {
-        saveBooks(id);
+    const handleReadd = () => {
+        saveBooks(idInt);
         // toast('Added to read mark');
     }
 
-    const handleWishlist = (id)=>{
+    const handleWishlist = ()=>{
         // toast('add to wish list')
-        saveBooksWishlist(id);
+        saveBooksWishlist(idInt);
     }
 
     return (

@@ -17,7 +17,8 @@ const saveBooks = (id) => {
     if (!exists) {
         storedBooks.push(id);
         localStorage.setItem('book-readd', JSON.stringify(storedBooks));
-        localStorage.setItem('book-wished', JSON.stringify(storedBooks));
+        // localStorage.setItem('book-wished', JSON.stringify(storedBooks));
+        saveBooksWishlist(id)
         toast.success('Book Bookmarked Successfully')
     }
     else {
