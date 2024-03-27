@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { saveBooks } from '../utility/localstorage';
+import { saveBooks, saveBooksWishlist } from '../utility/localstorage';
 
 const BookDetails = () => {
     const books = useLoaderData();
@@ -13,13 +13,14 @@ const BookDetails = () => {
     const book = books.find(book => book.bookId === idInt);
     console.log(book)
 
-    const handleReadd = (book) => {
+    const handleReadd = (id) => {
         saveBooks(id);
-        toast('Added to read mark');
+        // toast('Added to read mark');
     }
 
-    const handleWishlist = (book)=>{
-        toast('add to wish list')
+    const handleWishlist = (id)=>{
+        // toast('add to wish list')
+        saveBooksWishlist(id);
     }
 
     return (
@@ -49,8 +50,8 @@ const BookDetails = () => {
                         <p><span>Rating:</span>{book.rating}</p>
                     </div>
                     <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                        <button onClick={() => handleReadd(book)} className="px-8 py-3 text-lg font-semibold border rounded dark:bg-violet-600 dark:text-gray-50 btn btn-info text-white">Read</button>
-                        <button onClick={() => handleWishlist(book)} className="px-8 py-3 text-lg font-semibold border rounded dark:bg-violet-600 dark:text-gray-50 btn btn-info text-white">Wish list</button>
+                        <button onClick={() => handleReadd(id)} className="px-8 py-3 text-lg font-semibold border rounded dark:bg-violet-600 dark:text-gray-50 btn btn-info text-white">Read</button>
+                        <button onClick={() => handleWishlist(id)} className="px-8 py-3 text-lg font-semibold border rounded dark:bg-violet-600 dark:text-gray-50 btn btn-info text-white">Wish list</button>
                     </div>
                 </div>
             </div>

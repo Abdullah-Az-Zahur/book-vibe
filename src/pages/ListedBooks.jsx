@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import Nav from '../components/Nav';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLoaderData } from 'react-router-dom';
 
 const ListedBooks = () => {
+
+    const books = useLoaderData();
+    
+
     const [tabIndex, setTabIndex] = useState(0);
     return (
         <div className='container mx-auto'>
