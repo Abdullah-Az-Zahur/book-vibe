@@ -53,10 +53,10 @@ const saveBooksWishlist = (id) => {
     if (!exists) {
         storedBooks.push(id);
         localStorage.setItem('book-wished', JSON.stringify(storedBooks));
-        toast.success('Book Bookmarked Successfully')
+        toast.success('Add to wishlist Successfully')
     }
     else {
-        return toast.error('Already Bookmarked')
+        return toast.error('Already listed')
     }
     
 }

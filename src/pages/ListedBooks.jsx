@@ -16,6 +16,7 @@ const ListedBooks = () => {
             <div role="tablist" className="tabs tabs-lifted justify-start">
                 <Link
                     to='/ListedBooks/Readd'
+                    // onClick={() => setTabIndex(0)}
                     onClick={() => setTabIndex(0)}
                     role="tab" className={` ${tabIndex === 0 ? 'tab tab-active' : 'tab'}`}>Read Books</Link>
                 <Link

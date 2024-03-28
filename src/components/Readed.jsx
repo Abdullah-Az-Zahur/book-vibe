@@ -24,7 +24,7 @@ const Readed = () => {
             }
             setBookList(markedBooks);
         }
-    }, [bookmarks])
+    }, [booksList])
     return (
         <div>
             <div>

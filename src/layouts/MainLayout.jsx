@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from '../components/Nav';
 import { Outlet } from 'react-router-dom';
+import { BarChart } from 'recharts';
 
 const MainLayout = () => {
     return (
@@ -11,6 +12,7 @@ const MainLayout = () => {
             <div className='min-h-[calc(100vh-64px)]'>
                 <Outlet></Outlet>
             </div>
+            <BarChart></BarChart>
         </div>
     );
 };
