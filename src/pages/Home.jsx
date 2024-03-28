@@ -29,7 +29,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <h2 className="max-w-fit justify-center items-center mx-auto text-6xl font-bold">Books</h2>
+            <h2 className="max-w-fit justify-center items-center mx-auto text-6xl font-bold my-6">Books</h2>
 
             {/* books card */}
             <section className="dark:bg-gray-100 dark:text-gray-800">
