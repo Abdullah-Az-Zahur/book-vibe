@@ -17,6 +17,10 @@ const Nav = () => {
                                 className={({ isActive }) => isActive ? 'text-green-500 font-bold border border-green-500 rounded-lg ' : 'font-bold'}><a>Listed Books</a></NavLink>
                             <NavLink to='/PageToRead'
                                 className={({ isActive }) => isActive ? 'text-green-500 font-bold border border-green-500 rounded-lg ' : 'font-bold'}><a>Page to Read</a></NavLink>
+                            <NavLink to='/contact'
+                                className={({ isActive }) => isActive ? 'text-green-500 font-bold border border-green-500 rounded-lg ' : 'font-bold'}><a>Contact</a></NavLink>
+                            <NavLink to='/frk'
+                                className={({ isActive }) => isActive ? 'text-green-500 font-bold border border-green-500 rounded-lg ' : 'font-bold'}><a>Frequently Asked Questions</a></NavLink>
                         </ul>
                     </div>
                     <a className="btn btn-ghost text-xl">Book Vibe</a>
@@ -29,6 +33,10 @@ const Nav = () => {
                             className={({ isActive }) => isActive ? 'text-green-500 font-bold border border-green-500 rounded-lg p-2' : 'font-bold'}><a>Listed Books</a></NavLink>
                         <NavLink to='/PageToRead'
                             className={({ isActive }) => isActive ? 'text-green-500 font-bold border border-green-500 rounded-lg p-2' : 'font-bold'}><a>Page to Read</a></NavLink>
+                        <NavLink to='/contact'
+                            className={({ isActive }) => isActive ? 'text-green-500 font-bold border border-green-500 rounded-lg p-2' : 'font-bold'}><a>Contact</a></NavLink>
+                        <NavLink to='/frk'
+                            className={({ isActive }) => isActive ? 'text-green-500 font-bold border border-green-500 rounded-lg p-2' : 'font-bold'}><a>Frequently Asked Questions</a></NavLink>
                     </ul>
                 </div>
                 <div className="navbar-end gap-5">
